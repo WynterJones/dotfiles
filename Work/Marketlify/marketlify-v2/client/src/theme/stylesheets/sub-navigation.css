@@ -1,0 +1,9 @@
+.sub-nav--link {
+  @apply mr-8 whitespace-no-wrap py-4 px-1 border-b-2 border-transparent font-medium leading-5 text-gray-500;
+}
+.sub-nav--link:hover {
+  @apply text-gray-700 border-gray-300;
+}
+.sub-nav--link.active {
+  @apply whitespace-no-wrap py-4 px-1 border-b-2 border-purple-600 font-medium leading-5 text-purple-600;
+}

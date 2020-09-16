@@ -1,0 +1,43 @@
+.btn {
+  @apply inline-block text-center border font-medium rounded transition ease-in-out duration-150 px-3 py-2 text-sm leading-4;
+  box-shadow: rgba(37, 11, 54, 0.04) 0px 2px 0px;
+}
+.btn:focus {
+  @apply outline-none;
+}
+
+/* Size */
+.btn.medium {
+  @apply px-4 py-2 text-base leading-5;
+}
+.btn.large {
+  @apply px-6 py-3 text-base leading-6 text-lg;
+}
+
+/* Types */
+.btn.primary {
+  @apply text-white bg-purple-600 border-purple-800;
+}
+.btn.secondary {
+  @apply bg-white text-gray-700 border-gray-200;
+  /* background: rgb(250,251,252);
+  background: linear-gradient(0deg, rgba(250,251,252,1) 0%, rgba(255,255,255,1) 100%); */
+}
+.btn.save {
+  @apply bg-green-500 text-white border-green-800;
+}
+.btn.dark {
+  @apply bg-gray-600 text-white;
+}
+.btn.delete {
+  @apply text-red-700 bg-red-100 border-red-300;
+}
+.btn.delete-dark {
+  @apply text-white bg-red-600  border-red-800;
+}
+.btn.disabled {
+  @apply bg-gray-100 text-gray-300;
+}
+.btn.deploy {
+  @apply text-green-700 bg-green-100 border-green-200;
+}

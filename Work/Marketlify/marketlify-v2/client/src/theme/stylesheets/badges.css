@@ -1,0 +1,6 @@
+.badge {
+  @apply inline-flex items-center px-2 py-1 rounded-md font-medium leading-none;
+}
+.badge.secondary {
+  @apply bg-gray-100 text-gray-400;
+}

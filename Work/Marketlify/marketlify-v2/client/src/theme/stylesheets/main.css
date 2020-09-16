@@ -1,0 +1,90 @@
+@import './general.css';
+@import './tooltips.css';
+@import './app-buttons.css';
+@import './toastr.css';
+@import './pagy.css';
+@import './template-picker.css';
+@import './slideout-panel.css';
+@import './animations.css';
+@import './validations.css';
+@import './badges.css';
+@import './status-tabs.css';
+@import './sub-navigation.css';
+@import './sidebar.css';
+@import './registration.css';
+
+
+svg {
+  width: 15px !important;
+  height: auto !important;
+}
+
+html {
+  font-family: 'Inter', 'Avenir Next', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: #7e3af2;
+}
+
+.container-sm {
+  max-width: 600px;
+}
+
+.bg-gray-light {
+  background-color: #fafbfc;
+}
+
+.bg-gray-light-gradient {
+  background: rgb(250, 251, 252);
+  background: linear-gradient(
+    0deg,
+    rgba(250, 251, 252, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.slideout-overlay,
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slideout-panel {
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  transform: translateX(100%);
+}
+
+.slideout-close {
+  display: flex;
+  position: absolute;
+  top: 0;
+  padding-top: 30px;
+  right: 515px;
+}
+
+.container-xl {
+  max-width: 1280px;
+}
+.container-lg {
+  max-width: 1024px;
+}
+.container-md {
+  max-width: 768px;
+}
+.container-sm {
+  max-width: 640px;
+}
