@@ -71,7 +71,7 @@ bind '"\t":menu-complete'
 
 
 # Clear commands
-bind '"\C-m": "\C-l\C-j"'
+bind 'RETURN: "\e[1~clear; \e[4~\n"'
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 # rbenv ruby
