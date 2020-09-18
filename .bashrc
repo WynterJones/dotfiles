@@ -19,14 +19,6 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# exa ls aliases
-alias ls='exa --long --all'
-alias ll='exa --tree --grid --across --recurse'
-alias la='exa --tree --grid --across --recurse -I node_modules'
-
-# Add an "alert" alias for long running commands.
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -113,4 +105,4 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\n\\[\033[0;30m\]╔═╲╳╱═╗\[\033[00m\]\n\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]/\W\[\033[00m\] \[\033[01;36m\]\`parse_git_branch\`\[\033[00m\]\n\$ "
+export PS1="\n\\[\033[0;30m\]▔▔▔▔\[\033[00m\]\n\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]/\W\[\033[00m\] \[\033[01;36m\]\`parse_git_branch\`\[\033[00m\]\n\$ "
