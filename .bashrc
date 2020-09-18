@@ -22,8 +22,9 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # exa ls aliases
 alias ls='exa --long --all'
 alias ll='exa --tree --grid --across --recurse'
+alias la='exa --tree --grid --across --recurse -I node_modules'
 
-# Add an "alert" alias for long running commands. POPOS
+# Add an "alert" alias for long running commands.
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
@@ -44,7 +45,18 @@ bind '"\e[B":history-search-forward'
 bind '"\t":menu-complete'
 
 # Clear commands
-bind 'RETURN: "\e[1~clear; \e[4~\n"'
+preexec () {
+  clear;
+  
+}
+preexec_invoke_exec () {
+    [ -n "$COMP_LINE" ] && return                     # do nothing if completing
+    [ "$BASH_COMMAND" = "$PROMPT_COMMAND" ] && return # don't cause a preexec for $PROMPT_COMMAND
+    local this_command=`history 1 | sed -e "s/^[ ]*[0-9]*[ ]*//g"`; # obtain the command from the history, removing the history number at the beginning
+    preexec "$this_command"
+}
+trap 'preexec_invoke_exec' DEBUG 
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 
 # rbenv ruby
@@ -101,4 +113,4 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]\[\033[01;36m\]\`parse_git_branch\`\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\]\n\$ "
+export PS1="\n\\[\033[0;30m\]╔═╲╳╱═╗\[\033[00m\]\n\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]/\W\[\033[00m\] \[\033[01;36m\]\`parse_git_branch\`\[\033[00m\]\n\$ "
