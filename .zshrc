@@ -32,8 +32,8 @@ source /home/wynter/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Clear commands
 preexec () {
-  clear;
-  
+ printf "\033c"
+ echo "$fg_bold[red]╭╼$fg[blue] $PWD\n$fg_bold[red]╰───╼$fg_bold[green] $ $history[$HISTCMD] $fg_bold[red]\n"
 }
 preexec_invoke_exec () {
     [ -n "$COMP_LINE" ] && return                     # do nothing if completing
@@ -58,3 +58,4 @@ ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]"
 ZSH_THEME_GIT_PROMPT_DIRTY=" ✗"
 ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
+eval "$(starship init zsh)"
